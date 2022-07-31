@@ -33,14 +33,13 @@ subfig_labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 
 
 def main():
-    df = pd.read_csv('data/data.csv')
 
     fig, ax = plt.subplots(3, 3, figsize=(15, 15))
 
     ax = ax.ravel()
 
     for i, (control, test) in enumerate(exps):
-      df = pd.read_csv('/content/drive/My Drive/OpenFace/svm_training_testing_data.csv')
+      df = pd.read_csv('data/data.csv')
       if len(test.split('/')) < 2:
         exp_name = f'{names[test]} vs\n{names[control]}'
       else:
@@ -99,4 +98,8 @@ def main():
 
     ax[7].axis('off')
     ax[8].axis('off')
-plt.show()
+    plt.show()
+
+
+if __name__ == "__main__":
+    main()
